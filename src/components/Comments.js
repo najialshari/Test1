@@ -18,7 +18,7 @@ const Comments = () => {
 
     return (
 
-        <div className="comments col-4 ps-3" style={{ height: commentsHeight + 'px' }}>
+        <div className="comments col-12 col-md-4 ps-3" style={{ height: commentsHeight + 'px' }}>
             {comments.length !== 0 ?
                 <>
                     <h4 className="mb-4">Latest Comments</h4>

@@ -39,7 +39,7 @@ const Footer = () => {
                 .catch((error) => console.error("Error connection ", error))
 
         setBegin(false)
-
+// eslint-disable-next-line
     }, [handleSubscribe])
 
     return (
