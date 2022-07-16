@@ -22,6 +22,7 @@ const Blog = () => {
                 setBlogs(blogs.concat(result))
             })
             .catch("Error Blogs...")
+            // eslint-disable-next-line
     }, [pageNumber])
 
     return (
@@ -30,10 +31,10 @@ const Blog = () => {
 
             <Title titleText={'Our Latest Posts'} />
 
-            <div className="container d-flex p-0 mt-5" >
+            <div className="blogContainer container p-0 mt-5" >
 
                 {blogs.length !== 0 ?
-                    <div className="col" >
+                    <div className="col-12 col-md-8" >
                         {blogs.map((blog) => (
                             blog.data.map((post, index) => (
 

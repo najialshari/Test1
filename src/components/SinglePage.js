@@ -14,8 +14,9 @@ const SinglePage = () => {
             .then(responce => responce.json())
             .then(result => setBlogs(result))
             .catch("Error Blogs...")
+            // eslint-disable-next-line
     }, [])
-
+window.scrollTo(0,0)
     return (
         <>
             
