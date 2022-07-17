@@ -19,7 +19,8 @@ const Blog = () => {
             .then(result => {
                 result.meta.current_page * result.meta.posts_per_page
                     < result.meta.total_posts ? setLoadMore('visible') : setLoadMore('hidden')
-                setBlogs(blogs.concat(result))
+                setBlogs([...blogs, result])
+                // setBlogs(blogs.concat(result))
             })
             .catch("Error Blogs...")
             // eslint-disable-next-line
@@ -58,7 +59,8 @@ const Blog = () => {
                             )))}
                         <div className="d-flex pb-4">
                             <button className='btn btn-primary m-auto' style={{ visibility: loadMore }}
-                                onClick={() => setPageNumber(pageNumber + 1)}>Load More</button>
+                                onClick={(e) => {setPageNumber(pageNumber + 1)
+                                e.target.blur()}}>Load More</button>
                         </div>
                     </div>
                     

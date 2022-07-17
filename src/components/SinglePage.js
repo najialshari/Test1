@@ -22,10 +22,10 @@ window.scrollTo(0,0)
             
             <Title titleText={slug}/>
 
-            <div className="container d-flex p-0 mt-5" >
+            <div className="blogContainer container p-0 mt-5" >
 
                 {blogs.length !== 0 ?
-                    <div className="col-8" >
+                    <div className="col-12 col-md-8" >
                         <div className="card border-0 m-2">
                             <img src={blogs.data.thumbnail} className="card-image-top " alt='...' />
                             <div className="card-body p-0 mt-4">
