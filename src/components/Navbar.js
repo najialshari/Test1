@@ -12,13 +12,13 @@ const Navbar = () => {
         if (e.target.id === 'home') {
             setColorHome('rgb(255, 255, 255)')
             setColorBlog('rgb(204, 204, 204)')
-
+            setOldHome('rgb(255, 255, 255)')
         } else {
             setColorBlog('rgb(255, 255, 255)')
             setColorHome('rgb(204, 204, 204)')
-
+            setOldBlog('rgb(255, 255, 255)')
         }
-
+         
     }
 
     const mouseEnter = (e) => {
@@ -30,12 +30,11 @@ const Navbar = () => {
             setColorBlog('rgb(0, 0, 255)')
         }
     }
-    
+
     const mouseLeave = (e) => {
         if (e.target.id === 'home') setColorHome(oldHome)
         else setColorBlog(oldBlog)
     }
-
 
     return (
         <div className='navContainer'>
