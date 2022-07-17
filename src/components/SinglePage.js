@@ -14,13 +14,14 @@ const SinglePage = () => {
             .then(responce => responce.json())
             .then(result => setBlogs(result))
             .catch("Error Blogs...")
-            // eslint-disable-next-line
+        // eslint-disable-next-line
     }, [])
-window.scrollTo(0,0)
+    window.scrollTo(0, 0)
+        
     return (
         <>
-            
-            <Title titleText={slug}/>
+
+            <Title titleText={slug} />
 
             <div className="blogContainer container p-0 mt-5" >
 
@@ -30,15 +31,18 @@ window.scrollTo(0,0)
                             <img src={blogs.data.thumbnail} className="card-image-top " alt='...' />
                             <div className="card-body p-0 mt-4">
                                 <div className='bg-light d-flex justify-content-between align-items-baseline py-3 px-2'>
-                                <label className="fw-bold"><i className="bi bi-person"></i>&nbsp;&nbsp;
-                                    {blogs.data.author}</label>
+                                    <label className="fw-bold"><i className="bi bi-person"></i>&nbsp;&nbsp;
+                                        {blogs.data.author}</label>
 
                                     <strong style={{ fontSize: '14px' }}>
                                         <i className="bi bi-eye"></i>&nbsp;&nbsp;{blogs.data.views}&nbsp;
                                         /&nbsp;&nbsp;<i className="bi bi-calendar-event"></i>&nbsp;&nbsp;{blogs.data.date}&nbsp;
                                         /&nbsp;&nbsp;<i className="bi bi-tags"></i>&nbsp;&nbsp;{blogs.data.tags.join(', ')}</strong>
                                 </div>
-                                <article className="card-text me-3 my-4">{HTMLReactParser(blogs.data.content)}</article>
+                                
+                                <article className="card-text me-3 my-4">
+                                    {HTMLReactParser(blogs.data.content)}
+                                </article>
 
                             </div>
                         </div>

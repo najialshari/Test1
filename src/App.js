@@ -7,12 +7,15 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
 import SinglePage from './components/SinglePage';
+import Counter from './components/counter';
 // import '../node_modules/html-react-parser/dist/html-react-parser.min'
 
 function App() {
   return (
 
     <div className="App">
+      <Counter />
+      
       <Navbar />
       <div className='mainContainer'>
         <Routes>
@@ -21,7 +24,7 @@ function App() {
           <Route path='/blog/:slug' element={<SinglePage />} />
         </Routes>
       </div>
-      <Footer />
+      <Footer /> 
     </div>
 
   );

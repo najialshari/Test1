@@ -1,41 +1,40 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+// import { useState } from 'react'
+// import { Link } from 'react-router-dom'
 import myLogo from '../images/logo.png'
-
+import { NavLink } from 'react-router-dom'
 const Navbar = () => {
-    const [colorHome, setColorHome] = useState('rgb(255, 255, 255)')
-    const [colorBlog, setColorBlog] = useState('rgb(204, 204, 204)')
-    const [oldHome, setOldHome] = useState('rgb(255, 255, 255)')
-    const [oldBlog, setOldBlog] = useState('rgb(204, 204, 204)')
+    // const [colorHome, setColorHome] = useState('rgb(255, 255, 255)')
+    // const [colorBlog, setColorBlog] = useState('rgb(204, 204, 204)')
+    // const [oldHome, setOldHome] = useState('rgb(255, 255, 255)')
+//     const [oldBlog, setOldBlog] = useState('rgb(204, 204, 204)')
+// const blue = 'blue'
+// const red = 'red'
+//     const handleLinks = (e) => {
+//         if (e.target.id === 'home') {
+//             setColorHome('rgb(255, 255, 255)')
+//             setColorBlog('rgb(204, 204, 204)')
+//             setOldHome('rgb(255, 255, 255)')
+//         } else {
+//             setColorBlog('rgb(255, 255, 255)')
+//             setColorHome('rgb(204, 204, 204)')
+//             setOldBlog('rgb(255, 255, 255)')
+//         }
+         
+//     }
 
-    const handleLinks = (e) => {
-        if (e.target.id === 'home') {
-            setColorHome('rgb(255, 255, 255)')
-            setColorBlog('rgb(204, 204, 204)')
-
-        } else {
-            setColorBlog('rgb(255, 255, 255)')
-            setColorHome('rgb(204, 204, 204)')
-
-        }
-
-    }
-
-    const mouseEnter = (e) => {
-        if (e.target.id === 'home') {
-            setOldHome(colorHome)
-            setColorHome('rgb(0, 0, 255)')
-        } else {
-            setOldBlog(colorBlog)
-            setColorBlog('rgb(0, 0, 255)')
-        }
-    }
-    
-    const mouseLeave = (e) => {
-        if (e.target.id === 'home') setColorHome(oldHome)
-        else setColorBlog(oldBlog)
-    }
-
+//     const mouseEnter = (e) => {
+//         if (e.target.id === 'home') {
+//             setOldHome(colorHome)
+//             setColorHome('rgb(0, 0, 255)')
+//         } else {
+//             setOldBlog(colorBlog)
+//             setColorBlog('rgb(0, 0, 255)')
+//         }
+//     }
+//     const mouseLeave = (e) => {
+//         if (e.target.id === 'home') setColorHome(oldHome)
+//         else setColorBlog(oldBlog)
+//     }
 
     return (
         <div className='navContainer'>
@@ -48,19 +47,21 @@ const Navbar = () => {
 
                     <div className='links d-flex col-2 justify-content-end'>
 
-                        <Link id='home' to='/' className='nav-link p-2 me-3'
-                            onMouseEnter={mouseEnter}
-                            onMouseLeave={mouseLeave}
-                            style={{ color: colorHome }}
-                            onClick={handleLinks}
-                        >Home</Link>
+                        <NavLink id='home' to='/' className={({ isActive }) => isActive? 'nav-link text-info' : 
+                        'nav-link text-danger'}
+                            // onMouseEnter={mouseEnter}
+                            // onMouseLeave={mouseLeave}
+                            // style={{ color: {isActive} ? 'blue' : 'red' }}
+                            // onClick={handleLinks}
+                        >Home</NavLink>
 
-                        <Link id='blog' to='/blog' className='nav-link p-2 me-3'
-                            onMouseEnter={mouseEnter}
-                            onMouseLeave={mouseLeave}
-                            style={{ color: colorBlog }}
-                            onClick={handleLinks}
-                        >Blog</Link>
+                        <NavLink id='blog' to='/blog' className={({ isActive }) => isActive? 'nav-link text-info' : 
+                        'nav-link text-danger'} 
+                            // onMouseEnter={mouseEnter}
+                            // onMouseLeave={mouseLeave}
+                            // style={{ color: colorBlog }}
+                            // onClick={handleLinks}
+                        >Blog</NavLink>
 
                     </div>
                 </div>
