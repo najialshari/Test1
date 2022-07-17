@@ -28,6 +28,10 @@
   margin-bottom: 10px
 }
 
+.footer section p a:hover {
+  color: black;
+}
+
 .copyRights {
   padding: 60px 0 120px;
 }
@@ -56,6 +60,7 @@ li {
 article * {
   width: 100%
 }
+
 @media (min-width:768px) {
   .blogContainer {
     display: flex;
