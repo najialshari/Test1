@@ -23,7 +23,7 @@ const Blog = () => {
                 // setBlogs(blogs.concat(result))
             })
             .catch("Error Blogs...")
-            // eslint-disable-next-line
+        // eslint-disable-next-line
     }, [pageNumber])
 
     return (
@@ -46,7 +46,10 @@ const Blog = () => {
 
                                         <Link to={`/blog/${post.slug}`} className="nav-link card-title">
                                             <h3 className="fw-bold">{HTMLReactParser(post.title)}</h3></Link>
-                                        <label className="card-text me-3 mb-3">{HTMLReactParser(post.excerpt)}</label>
+
+                                        <div className="card-text me-3 mb-3">
+                                            {HTMLReactParser(post.excerpt)}
+                                        </div>
 
                                         <strong style={{ fontSize: '13px' }}>
                                             <i className="bi bi-eye"></i>&nbsp;&nbsp;{post.views}&nbsp;
@@ -59,15 +62,17 @@ const Blog = () => {
                             )))}
                         <div className="d-flex pb-4">
                             <button className='btn btn-primary m-auto' style={{ visibility: loadMore }}
-                                onClick={(e) => {setPageNumber(pageNumber + 1)
-                                e.target.blur()}}>Load More</button>
+                                onClick={(e) => {
+                                    setPageNumber(pageNumber + 1)
+                                    e.target.blur()
+                                }}>Load More</button>
                         </div>
                     </div>
-                    
+
                     : <div className="col text-center text-primary">
                         <div className="spinner-border" role='status'></div>
                     </div>}
-                
+
                 <Comments />
 
             </div>
