@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
 }
 
 /* navContainer used to control navbar with higher layer z-index 2 to be above carousel */
@@ -25,7 +24,7 @@
 }
 
 .footer section p {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .footer section p a:hover {
@@ -44,7 +43,6 @@
 li {
   list-style: none;
   font-weight: bold;
-
 }
 
 .mycard {
@@ -54,14 +52,32 @@ li {
   left: 7.5%;
   width: 85%;
   background-color: white;
-
 }
 
 article * {
-  width: 100%
+  width: 100%;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
+  .blogContainer {
+    display: flex;
+  }
+}
+.active {
+  color: white;
+}
+
+strong {
+  background-color: rgb(0, 255, 123);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-wrap: wrap;
+}
+
+article * {
+  width: 100%;
+}
+@media (min-width: 768px) {
   .blogContainer {
     display: flex;
   }
